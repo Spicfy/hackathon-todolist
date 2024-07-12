@@ -100,5 +100,27 @@ newToDoForm.addEventListener('submit', (event) => {
 function saveTask(task){
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(task);
-    
+}
+
+function addTask(date, title, description){
+    const task = {
+        title,
+        description
+    }
+    const taskList = document.getElementById('taskList');
+    const taskItem = document.createElement('li');
+    taskItem.innerHTML = `
+    <strong>${title}</strong> (${date}) <br> ${description}
+    <button class="deleteTask">Delete</button>
+    `;
+
+    taskList.appendChild(taskItem);
+
+    taskItem.querySelector('.deleteTask').addEventListener('click', function(){
+        deleteTask(date, title, description);
+        taskItem.remove();
+    })
+
+    let tasks = JSON.parse(locakStorage.getItem('tasks')) || {};
+    if()
 }
