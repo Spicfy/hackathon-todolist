@@ -31,6 +31,7 @@
   </div>
   <button id="new-to-do">Add new to do</button>
   <form id="new-to-do-form" style="display: none;">
+    <h3 id = "formDate"></h3>
   <div>
     <label for="title">task title</label>
     <input class="entry" type="text" id="title">
@@ -38,12 +39,14 @@
 
   <div>
     <label for= "description">Task description</label>
-    <textarea id="desc" type="text"></textarea>
+    <textarea id="taskInput" rows="4" cols="50" type="text"></textarea>
   </div>
 
   <div>
     <input class ="submit" type="submit" value="Add task">
-    </div>
+  </div>
+</form>
+<ul id = "taskList"></ul>
   <script src="main.js"></script>
 </body>
 </html>
